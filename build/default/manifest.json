@@ -1,7 +1,0 @@
-{
-  "name": "Yo-Chat",
-  "short_name": "Yo-Chat",
-  "description": "smth",
-  "start_url": "/",
-  "display": "standalone"
-}

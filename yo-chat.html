@@ -1,4 +1,4 @@
-<link rel="import" href="bower_components/polymer/polymer.html">
+<html><head><link rel="import" href="bower_components/polymer/polymer.html">
 
 <link rel="import" href="bower_components/app-layout/app-layout.html">
 <link rel="import" href="bower_components/app-layout/app-header/app-header.html">
@@ -31,7 +31,7 @@
 
 
 
-<dom-module id="yo-chat">
+</head><body><dom-module id="yo-chat">
   <template>
     <style>
       :host {
@@ -147,70 +147,41 @@
 
     </style>
 
-  <firebase-app
-          name="yo-chat"
-          auth-domain="yo-chat-498da.firebaseapp.com"
-          database-url="https://yo-chat-498da.firebaseio.com/"
-          api-key="AIzaSyBoONzsNkaj4pNxataLb6U_y7MUQUDrEXE">
+  <firebase-app name="yo-chat" auth-domain="yo-chat-498da.firebaseapp.com" database-url="https://yo-chat-498da.firebaseio.com/" api-key="AIzaSyBoONzsNkaj4pNxataLb6U_y7MUQUDrEXE">
   </firebase-app>
 
 
-    <firebase-auth
-            id="auth"
-            app-name="yo-chat"
-            provider="google"
-            signed-in="{{signedIn}}"
-            user="{{user}}">
+    <firebase-auth id="auth" app-name="yo-chat" provider="google" signed-in="{{signedIn}}" user="{{user}}">
     </firebase-auth>
 
-   <firebase-query
-            id="query"
-            app-name="yo-chat"
-            path="/mes"
-            data="{{messages}}"
-            limit-to-last="{{rows}}"
-            order-by-child="time">
+   <firebase-query id="query" app-name="yo-chat" path="/mes" data="{{messages}}" limit-to-last="{{rows}}" order-by-child="time">
     </firebase-query>
 
-    <firebase-document
-            id="document"
-            app-name="yo-chat"
-            path="/mes/[[messageId]]"
-            data="{{message}}"
-            log="true">
+    <firebase-document id="document" app-name="yo-chat" path="/mes/[[messageId]]" data="{{message}}" log="true">
     </firebase-document>
 
-    <app-indexeddb-mirror
-            session="[[user.uid]]"
-            key="messages"
-            data="{{messages}}"
-            persisted-data="{{persistedMessages}}">
+    <app-indexeddb-mirror session="[[user.uid]]" key="messages" data="{{messages}}" persisted-data="{{persistedMessages}}">
     </app-indexeddb-mirror>
 
 
       <style include="note-app-shared-styles"></style>
-      <yo-toolbar
-              signed-in="[[signedIn]]"
-              on-sign-out="signOut">
+      <yo-toolbar signed-in="[[signedIn]]" on-sign-out="signOut">
       </yo-toolbar>
-      <na-login
-              on-sign-in="signIn"
-              signed-in="[[signedIn]]"
-              disabled="[[!online]]">
+      <na-login on-sign-in="signIn" signed-in="[[signedIn]]" disabled="[[!online]]">
       </na-login>
 
 
       <paper-button on-click="_loadMoreMessages" class="loadMoreButton">More previous messages</paper-button>
-      <div  class="cards-holder">
+      <div class="cards-holder">
           <template id="mesRepeat" is="dom-repeat" items="[[persistedMessages]]" as="mes">
               <div class="mes">
                   <iron-label>[[mes.login]]</iron-label>
-                  <iron-label>[[dateToStr(mes.time)]]</iron-label><br/>
+                  <iron-label>[[dateToStr(mes.time)]]</iron-label><br>
                   <paper-card class="mes-text">
                       <div class="card-content">
                           <p>[[mes.message]]</p>
                       </div>
-                  </paper-card><br/>
+                  </paper-card><br>
               </div>
           </template>
       </div>
@@ -222,9 +193,9 @@
 
       <paper-dialog id="loginDialog" on-iron-overlay-closed="_onLoginDialogClosed" class="dialog">
         <h2>Set your login</h2>
-        <paper-input value="{{login}}" always-float-label label="Login"></paper-input>
+        <paper-input value="{{login}}" always-float-label="" label="Login"></paper-input>
         <div class="buttons">
-          <paper-button dialog-confirm autofocus class="button">OK</paper-button>
+          <paper-button dialog-confirm="" autofocus="" class="button">OK</paper-button>
         </div>
       </paper-dialog>
 
@@ -347,3 +318,4 @@
     });
   </script>
 </dom-module>
+</body></html>
