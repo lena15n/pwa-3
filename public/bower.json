@@ -21,12 +21,23 @@
     "app-storage": "PolymerElements/app-storage#^2.0.1",
     "sw-toolbox": "^3.6.1",
     "web-animations-js": "^2.2.5",
-    "iron-scroll-threshold": "PolymerElements/iron-scroll-threshold#^2.0.0"
+    "iron-scroll-threshold": "PolymerElements/iron-scroll-threshold#^2.0.0",
+    "note-app": "PolymerLabs/note-app#^0.9.0",
+    "firebase": "^4.1.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "web-component-tester": "^6.0.0-prerelease.5",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "resolutions": {
+    "paper-fab": "^2.0.0",
+    "app-storage": "^2.0.1",
+    "paper-toolbar": "^2.0.0",
+    "iron-icons": "^2.0.0",
+    "webcomponentsjs": "^0.7.24",
+    "polymerfire": "^2.0.1",
+    "firebase": "^4.1.1"
   }
 }
