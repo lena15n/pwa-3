@@ -1,3 +1,7 @@
+**Example in gh-pages branch or https://lena15n.github.io/pwa-3/**
+
+
+
 # \<Yo-Chat\>
 
 smth
